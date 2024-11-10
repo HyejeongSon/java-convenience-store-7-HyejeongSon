@@ -19,6 +19,11 @@ public class InputView {
         return validateResponse(Console.readLine()).equalsIgnoreCase("Y");
     }
 
+    public static boolean askForFullPrice(String productName, int quantity) {
+        System.out.printf("현재 %s %d개는 프로모션 할인이 적용되지 않습니다. 그래도 구매하시겠습니까? (Y/N)\n", productName, quantity);
+        return validateResponse(Console.readLine()).equalsIgnoreCase("Y");
+    }
+
     private static String validateResponse(String input) {
         if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")) {
             return input;
