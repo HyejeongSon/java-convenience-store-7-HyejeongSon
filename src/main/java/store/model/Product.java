@@ -46,4 +46,12 @@ public class Product {
     public int getPromotionQuantity() {
         return promotionQuantity;
     }
+
+    public void decreaseGeneralQuantity(int amount) {
+        generalQuantity -= amount;
+    }
+
+    public void decreasePromotionQuantity(int amount) {
+        promotionQuantity -= amount;
+    }
 }
