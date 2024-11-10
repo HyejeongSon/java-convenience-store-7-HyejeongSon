@@ -12,6 +12,10 @@ public class Inventory {
         this.promotions = new HashMap<>();
     }
 
+    public boolean containsProduct(String product) {
+        return products.containsKey(product);
+    }
+
     public void addProduct(Product product) {
         products.put(product.getName(), product);
     }
@@ -26,5 +30,24 @@ public class Inventory {
 
     public int promotionSize() {
         return promotions.size();
+    }
+
+    public void setPromotionQuantity(String name, String promotion, int quantity) {
+        products.get(name).setPromotion(promotion);
+        products.get(name).setPromotionQuantity(quantity);
+    }
+
+    public void setGeneralQuantity(String name, int quantity) {
+        products.get(name).setGeneralQuantity(quantity);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Products:\n");
+        sb.append(products.toString());
+        sb.append("\n\nPromotions:\n");
+        sb.append(promotions.toString());
+        return sb.toString();
     }
 }
