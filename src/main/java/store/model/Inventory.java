@@ -1,7 +1,11 @@
 package store.model;
 
+import store.dto.ProductDTO;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Inventory {
     private Map<String, Product> products;
@@ -39,6 +43,18 @@ public class Inventory {
 
     public void setGeneralQuantity(String name, int quantity) {
         products.get(name).setGeneralQuantity(quantity);
+    }
+
+    public List<ProductDTO> getProductDTOList() {
+        return products.values().stream()
+                .map(product -> new ProductDTO(
+                        product.getName(),
+                        product.getPrice(),
+                        product.getGeneralQuantity(),
+                        product.getPromotion(),
+                        product.getPromotionQuantity()
+                ))
+                .collect(Collectors.toList());
     }
 
     @Override
