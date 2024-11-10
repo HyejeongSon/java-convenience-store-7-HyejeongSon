@@ -14,6 +14,11 @@ public class InputView {
         return validateResponse(Console.readLine()).equalsIgnoreCase("Y");
     }
 
+    public static boolean askForMoreProduct(String productName, int quantity) {
+        System.out.printf("현재 %s은(는) %d개를 무료로 더 받을 수 있습니다. 추가하시겠습니까? (Y/N)\n", productName, quantity);
+        return validateResponse(Console.readLine()).equalsIgnoreCase("Y");
+    }
+
     private static String validateResponse(String input) {
         if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")) {
             return input;
