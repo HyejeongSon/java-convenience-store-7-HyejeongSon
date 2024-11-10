@@ -24,6 +24,11 @@ public class InputView {
         return validateResponse(Console.readLine()).equalsIgnoreCase("Y");
     }
 
+    public static boolean askMembershipDiscount() {
+        System.out.println("멤버십 할인을 받으시겠습니까? (Y/N)");
+        return validateResponse(Console.readLine()).equalsIgnoreCase("Y");
+    }
+
     private static String validateResponse(String input) {
         if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("N")) {
             return input;
