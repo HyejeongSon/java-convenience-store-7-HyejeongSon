@@ -54,4 +54,9 @@ public class Product {
     public void decreasePromotionQuantity(int amount) {
         promotionQuantity -= amount;
     }
+
+    @Override
+    public String toString() {
+        return "{" + name + ", " + price + ", " + generalQuantity + ", " + promotion + ", " + promotionQuantity + "}";
+    }
 }

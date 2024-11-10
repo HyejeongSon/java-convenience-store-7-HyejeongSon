@@ -40,4 +40,9 @@ public class Promotion {
     public LocalDate getEndDate() {
         return endDate;
     }
+
+    @Override
+    public String toString() {
+        return "{" + name + ", " + buy + ", " + get + ", " + startDate + ", " + endDate + "}";
+    }
 }
