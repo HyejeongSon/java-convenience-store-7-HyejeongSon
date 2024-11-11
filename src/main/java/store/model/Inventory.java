@@ -66,4 +66,24 @@ public class Inventory {
         sb.append(promotions.toString());
         return sb.toString();
     }
+
+    public int getPromotionQuantityByProductName(String name) {
+        return products.get(name).getPromotionQuantity();
+    }
+
+    public int getGeneralQuantityByProductName(String name) {
+        return products.get(name).getGeneralQuantity();
+    }
+    
+    public boolean hasPromotionByProductName(String name) {
+        return products.get(name).hasPromotion();
+    }
+
+    public Product getProduct(String name) {
+        return products.get(name);
+    }
+
+    public Promotion getPromotionByProductName(String name) {
+        return promotions.get(products.get(name).getPromotion());
+    }
 }
