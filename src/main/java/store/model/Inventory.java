@@ -74,7 +74,7 @@ public class Inventory {
     public int getGeneralQuantityByProductName(String name) {
         return products.get(name).getGeneralQuantity();
     }
-    
+
     public boolean hasPromotionByProductName(String name) {
         return products.get(name).hasPromotion();
     }
