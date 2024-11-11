@@ -55,6 +55,14 @@ public class Product {
         promotionQuantity -= amount;
     }
 
+    public boolean canApplyPromotion(int quantity) {
+        return promotionQuantity >= quantity;
+    }
+
+    public boolean hasPromotion() {
+        return promotion != null;
+    }
+
     @Override
     public String toString() {
         return "{" + name + ", " + price + ", " + generalQuantity + ", " + promotion + ", " + promotionQuantity + "}";

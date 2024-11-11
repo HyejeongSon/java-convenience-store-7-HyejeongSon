@@ -33,14 +33,6 @@ public class Promotion {
         return get;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public LocalDate getEndDate() {
-        return endDate;
-    }
-
     @Override
     public String toString() {
         return "{" + name + ", " + buy + ", " + get + ", " + startDate + ", " + endDate + "}";
