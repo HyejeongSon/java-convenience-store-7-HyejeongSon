@@ -2,6 +2,7 @@ package store.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
 
 public class Order {
     private List<Product> items;
@@ -65,7 +66,7 @@ public class Order {
     }
 
     private int calculateFreeQuantity(int promotionQuantity, Promotion promotion) {
-        if (promotion == null) return 0;
+        if (promotion == null || promotion.isDateInRange(LocalDate.now())) return 0;
         int buy = promotion.getBuy();
         int get = promotion.getGet();
         int applicableGroups = promotionQuantity / (buy + get);
@@ -81,8 +82,6 @@ public class Order {
         }
         return giftedProducts;
     }
-
-
 
     public int calculateTotalQuantity() {
         int totalQuantity = 0;

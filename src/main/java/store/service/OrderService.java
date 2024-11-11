@@ -25,7 +25,6 @@ public class OrderService {
             order = new Order(inventory);
             processOrder();
             order.setMembershipDiscount(InputView.askMembershipDiscount());
-            System.out.println(order);
             printReceipt();
             continueShopping = InputView.askForAdditionalPurchase();
         }
